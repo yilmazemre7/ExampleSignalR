@@ -2,7 +2,29 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@section Scripts {
+    <script src="~/js/signalrclient.js"></script>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div id="connectionId" class="alert alert-primary" role="alert">
+                Bağlantı bekleniyor...
+            </div>
+            
+            <div class="mt-3">
+                <button id="span-connected-client-count" class="btn btn-success"></button>
+                <button id="btn-send-message-all-client" class="btn btn-success">Tüm clientlara gönder</button>
+                <button id="btn-send-message-caller-client" class="btn btn-warning">İstek yapan client'a gönder</button>
+                <button id="btn-send-message-other-client" class="btn btn-danger">Diğer clientlara gönder</button>
+
+                <div>
+                    <hr />
+                    <input type="text" class="form-control mx-1 my-1" id="text-connectionId" placeholder="connection Id">
+                    <button class="btn btn-primary mx-1 my-1" id="btn-send-message-individual-client">Spesifik client'a gönder</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

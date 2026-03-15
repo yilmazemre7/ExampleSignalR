@@ -17,6 +17,7 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.MapHub<ExampleHub>("/examplehub");
+app.MapHub<ExampleTypeSafeHub>("/exampleTypeSafeHub");
 app.UseRouting();
 
 app.UseAuthorization();

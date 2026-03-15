@@ -6,7 +6,7 @@ namespace SignalR.Web.Hubs
     {
         public async Task BroadcastMessageToAllClient(string message)
         {
-            await Clients.All.SendAsync(message);
+            await Clients.All.SendAsync("ReceiveMessageForAllClient",message);
         }
     }
 }
